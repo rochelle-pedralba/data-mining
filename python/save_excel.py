@@ -16,6 +16,5 @@ def save_excel(rules, country):
     book.save(excel_path)
     book.close()
 
-  # Now, write the DataFrame to the Excel file, effectively overwriting the old sheet
   with pd.ExcelWriter("../results/association_rules.xlsx", engine='openpyxl', mode='a') as writer:
     rules.to_excel(writer, sheet_name=country, index=False)
